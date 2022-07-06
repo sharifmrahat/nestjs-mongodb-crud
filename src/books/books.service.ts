@@ -19,16 +19,16 @@ export class BooksService {
     return this.bookModel.find();
   }
 
-  findOne(_id: string) {
+  async findOne(_id: string) {
     return this.bookModel.findOne({ _id });
   }
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  update(_id: string, _updateBookDto: UpdateBookDto) {
+  async update(_id: string, _updateBookDto: UpdateBookDto) {
     return this.bookModel.updateOne({ _id }, { $set: { ..._updateBookDto } });
   }
 
-  remove(_id: string) {
+  async remove(_id: string) {
     return this.bookModel.deleteOne({ _id });
   }
 }
